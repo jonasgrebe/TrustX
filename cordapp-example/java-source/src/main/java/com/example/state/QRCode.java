@@ -36,11 +36,11 @@ public class QRCode {
                 .lastIndexOf('.') + 1), new File(filePath));
     }
 
-    public static String readQRCode(File file, String charset, Map hintMap)
+    public static String readQRCode(String filePath, String charset, Map hintMap)
             throws FileNotFoundException, IOException, NotFoundException {
         BinaryBitmap binaryBitmap = new BinaryBitmap(new HybridBinarizer(
                 new BufferedImageLuminanceSource(
-                        ImageIO.read(new FileInputStream(file)))));
+                        ImageIO.read(new FileInputStream(filePath)))));
         Result qrCodeResult = new MultiFormatReader().decode(binaryBitmap,
                 hintMap);
         return qrCodeResult.getText();

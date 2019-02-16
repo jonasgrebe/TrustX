@@ -1,5 +1,6 @@
 package com.example.contract;
 
+import com.example.state.BuyerTransState;
 import com.example.state.POSTransState;
 import net.corda.core.contracts.CommandData;
 import net.corda.core.contracts.CommandWithParties;
@@ -26,7 +27,7 @@ import static net.corda.core.contracts.ContractsDSL.requireThat;
  * All contracts must sub-class the [Contract] interface.
  */
 public class BuyerContract implements Contract {
-    public static final String POS_CONTRACT_ID = "com.example.contract.POSContract";
+    public static final String BUYER_CONTRACT_ID = "com.example.contract.BuyerContract";
 
     /**
      * The verify() function of all the states' contracts must not throw an exception for a transaction to be
@@ -42,22 +43,19 @@ public class BuyerContract implements Contract {
 
 
             final BuyerTransState out = tx.outputsOfType(BuyerTransState.class).get(0);
-            require.using("The SellerName should not be empty",
-                    !out.getSellerName().isEmpty());
+            require.using("There has to be a hash",
+                    out.getTxHash() != null);
             require.using("Buyer value should be empty",
                     out.getBuyer() != null);
             require.using("Tax Value should not be empty",
                     out.getTotalValue() >= 0 );
             require.using("Total Tax Value should be >=0",
                             out.getTaxValue() >= 0 );
-            require.using("Government should not be empty",
-                        !out.getGov().isEmpty() );
-
+            require.using("Government should not be null",
+                        out.getGov() != null);
 
 //          DO we need requirements for composition of the QR properties
 
-            require.using("The sender and the gov cannot be the same entity.",
-                    out.getSeller() != out.getGov());
             require.using("All of the participants must be signers.",
                     command.getSigners().containsAll(out.getParticipants().stream().map(AbstractParty::getOwningKey).collect(Collectors.toList())));
 

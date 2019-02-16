@@ -7,6 +7,7 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import kotlinx.html.SVG;
 import net.corda.core.contracts.LinearState;
 import net.corda.core.contracts.UniqueIdentifier;
+import net.corda.core.crypto.SecureHash;
 import net.corda.core.identity.AbstractParty;
 import net.corda.core.identity.Party;
 import net.corda.core.schemas.MappedSchema;
@@ -34,13 +35,14 @@ public class BuyerTransState implements LinearState, QueryableState {
      private final Float taxValue;
      private final UniqueIdentifier transId;
      private final UniqueIdentifier companyId;
+     private final SecureHash txHash;
 
     /**
      * @param qrCodeFile file of the scanned in qr code
      * @param buyer the party generating the transaction
      * @param gov the government validating the transactions against user submissionn
      */
-    public BuyerTransState(File qrCodeFile,
+    public BuyerTransState(String qrCodeFilePath,
                            Party buyer,
                            Party gov)
     {
@@ -53,7 +55,7 @@ public class BuyerTransState implements LinearState, QueryableState {
 
         String qrContentString = "";
         try {
-             qrContentString = QRCode.readQRCode(qrCodeFile, charset, hintMap);
+             qrContentString = QRCode.readQRCode(qrCodeFilePath, charset, hintMap);
         } catch (Exception e) {
             System.out.println(e.getStackTrace());
         }
@@ -63,6 +65,35 @@ public class BuyerTransState implements LinearState, QueryableState {
         this.taxValue = qrContent.getTaxValue();
         this.transId = qrContent.getTransId();
         this.companyId = qrContent.getCompanyId();
+        this.txHash = qrContent.getTxHash();
+    }
+
+    public Float getTotalValue() {
+        return totalValue;
+    }
+
+    public Float getTaxValue() {
+        return taxValue;
+    }
+
+    public Party getBuyer() {
+        return buyer;
+    }
+
+    public Party getGov() {
+        return gov;
+    }
+
+    public UniqueIdentifier getTransId() {
+        return transId;
+    }
+
+    public UniqueIdentifier getCompanyId() {
+        return companyId;
+    }
+
+    public SecureHash getTxHash() {
+        return txHash;
     }
 
     @Override public UniqueIdentifier getLinearId() { return null; }
