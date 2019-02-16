@@ -20,7 +20,7 @@ import java.util.List;
  *
  * A state must implement [ContractState] or one of its descendants.
  */
-public class POSTransState implements LinearState, QueryableState {
+public class BuyerTransState implements LinearState, QueryableState {
     private final Float totalValue; // full value of transaction
     private final Float taxValue; // amount of tax on transaction paid
     private final Float totalLiability; // total amount cumulative tax owing
@@ -36,7 +36,7 @@ public class POSTransState implements LinearState, QueryableState {
      * @param seller the party generating the transaction
      * @param gov the government validating the transactions against user submissions
      */
-    public POSTransState(Float totalValue ,
+    public BuyerTransState(Float totalValue ,
                           Float taxValue ,
                           Float totalLiability ,
                           Party seller,
