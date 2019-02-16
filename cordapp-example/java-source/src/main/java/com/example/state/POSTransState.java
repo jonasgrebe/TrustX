@@ -76,22 +76,14 @@ public class POSTransState implements LinearState, QueryableState {
     //public SVG getQrTransCode() { return qrTransCode; }
 
     public UniqueIdentifier getTransId() { return transId; }
-    @Override public UniqueIdentifier getLinearId() { return getCompanyId(); }
     public UniqueIdentifier getCompanyId() { return companyId; }
+    @Override public UniqueIdentifier getLinearId() { return getCompanyId(); }
     @Override public List<AbstractParty> getParticipants() {
         return Arrays.asList(seller, gov);
     }
 
     @Override public PersistentState generateMappedObject(MappedSchema schema) {
-        if (schema instanceof IOUSchemaV1) {
-            return new IOUSchemaV1.PersistentIOU(
-                    this.seller.getName().toString(),
-                    this.gov.getName().toString(),
-                    1, // random value to satisfy the arguments
-                    this.companyId.getId());
-        } else {
-            throw new IllegalArgumentException("Unrecognised schema $schema");
-        }
+        return null;
     }
 
     @Override public Iterable<MappedSchema> supportedSchemas() {

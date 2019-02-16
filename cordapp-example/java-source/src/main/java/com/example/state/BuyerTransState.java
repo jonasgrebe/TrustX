@@ -2,6 +2,8 @@ package com.example.state;
 
 import com.example.schema.IOUSchemaV1;
 import com.google.common.collect.ImmutableList;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import kotlinx.html.SVG;
 import net.corda.core.contracts.LinearState;
 import net.corda.core.contracts.UniqueIdentifier;
@@ -14,7 +16,9 @@ import net.corda.core.schemas.QueryableState;
 import javax.servlet.http.Part;
 import java.io.File;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * The state object recording IOU agreements between two parties.
@@ -34,7 +38,7 @@ public class BuyerTransState implements LinearState, QueryableState {
     /**
      * @param qrCodeFile file of the scanned in qr code
      * @param buyer the party generating the transaction
-     * @param gov the government validating the transactions against user submissions
+     * @param gov the government validating the transactions against user submissionn
      */
     public BuyerTransState(File qrCodeFile,
                            Party buyer,
@@ -43,19 +47,22 @@ public class BuyerTransState implements LinearState, QueryableState {
         this.buyer = buyer;
         this.gov = gov;
 
-        // TODO: Extract information out of qr code file
+        String charset = "UTF-8"; // or "ISO-8859-1"
+        Map hintMap = new HashMap();
+        hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
+
+        String qrContentString = "";
         try {
-            String decodedFile = QRCodeReader.decodeQRCode(qrCodeFile);
-            System.out.println(decodedFile);
+             qrContentString = QRCode.readQRCode(qrCodeFile, charset, hintMap);
         } catch (Exception e) {
             System.out.println(e.getStackTrace());
         }
+        QRContent qrContent = QRContent.deserialize(qrContentString);
 
-        // TODO: fill in information from qr code
-        this.totalValue = null;
-        this.taxValue = null;
-        this.transId = null;
-        this.companyId = null;
+        this.totalValue = qrContent.getTotalValue();
+        this.taxValue = qrContent.getTaxValue();
+        this.transId = qrContent.getTransId();
+        this.companyId = qrContent.getCompanyId();
     }
 
     @Override public UniqueIdentifier getLinearId() { return null; }
@@ -63,9 +70,7 @@ public class BuyerTransState implements LinearState, QueryableState {
         return Arrays.asList(buyer, gov);
     }
 
-    @Override public PersistentState generateMappedObject(MappedSchema schema) {
-        return null;
-    }
+    @Override public PersistentState generateMappedObject(MappedSchema schema) { return null; }
 
     @Override public Iterable<MappedSchema> supportedSchemas() {
         return ImmutableList.of(new IOUSchemaV1());
