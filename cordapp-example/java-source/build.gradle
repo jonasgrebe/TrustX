@@ -55,6 +55,7 @@ dependencies {
     compile 'com.github.kenglxn.QRGen:javase:2.5.0'
     compile "com.google.zxing:core:3.3.0"
     compile 'com.google.zxing:javase:3.3.0'
+    implementation 'com.google.code.gson:gson:2.8.5'
     // CorDapp dependencies
     // Specify your cordapp's dependencies below, including dependent CorDapps
     cordapp "$corda_release_group:corda-finance:$corda_release_version"
