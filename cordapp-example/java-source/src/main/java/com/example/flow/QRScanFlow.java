@@ -2,18 +2,13 @@ package com.example.flow;
 
 import co.paralleluniverse.fibers.Suspendable;
 import com.example.contract.BuyerContract;
-import com.example.contract.POSContract;
 import com.example.state.BuyerTransState;
 import com.example.state.IOUState;
 import com.example.state.POSTransState;
-import com.example.state.QRContent;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
-import com.google.zxing.EncodeHintType;
-import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import net.corda.core.contracts.Command;
 import net.corda.core.contracts.ContractState;
-import net.corda.core.contracts.UniqueIdentifier;
 import net.corda.core.crypto.SecureHash;
 import net.corda.core.flows.*;
 import net.corda.core.identity.Party;
@@ -22,11 +17,6 @@ import net.corda.core.transactions.TransactionBuilder;
 import net.corda.core.utilities.ProgressTracker;
 import net.corda.core.utilities.ProgressTracker.Step;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-
-import static com.example.contract.POSContract.POS_CONTRACT_ID;
 import static com.example.contract.BuyerContract.BUYER_CONTRACT_ID;
 import static net.corda.core.contracts.ContractsDSL.requireThat;
 
@@ -128,12 +118,6 @@ public class QRScanFlow {
             final SignedTransaction fullySignedTx = subFlow(
                     new CollectSignaturesFlow(partSignedTx, ImmutableSet.of(otherPartySession), CollectSignaturesFlow.Companion.tracker()));
 
-
-            //
-            QRContent qrContent = otherPartySession.receive(QRContent.class).unwrap(it -> it);
-
-
-
             // Stage 5.
             progressTracker.setCurrentStep(FINALISING_TRANSACTION);
             // Notarise and record the transaction in both parties' vaults.
@@ -160,25 +144,20 @@ public class QRScanFlow {
 
                 @Override
                 protected void checkTransaction(SignedTransaction stx) {
+                    BuyerTransState btState = (BuyerTransState)stx.getTx().getOutput(0);
                     requireThat(require -> {
-                        ContractState output = stx.getTx().getOutputs().get(0).getData();
-                        require.using("This must be an IOU transaction.", output instanceof IOUState);
-                        IOUState iou = (IOUState) output;
-                        require.using("I won't accept IOUs with a value over 100.", iou.getValue() <= 100);
+                        SecureHash userHash = btState.getTxHash();
+                        //TODO need to filter on this correctly
+                        SecureHash chainHash = getServiceHub().getVaultService().queryBy(POSTransState.class).getStates().get(0).getRef().getTxhash();
+
+                        require.using("TxHash from output state is equal to TxHash in chain", chainHash.toString().equals(userHash.toString()));
+
                         return null;
                     });
                 }
             }
 
-            SignedTransaction signedTransaction = subFlow(new SignTxFlow(otherPartyFlow, SignTransactionFlow.Companion.tracker()));
-
-            SecureHash txHash = signedTransaction.getId();
-            POSTransState posState = (POSTransState)signedTransaction.getTx().getOutput(0);
-            QRContent qrContent = new QRContent(posState.getTotalValue(), posState.getTaxValue(),posState.getTransId(), posState.getCompanyId(), txHash);
-
-            otherPartyFlow.send(signedTransaction);
-
-            otherPartyFlow.send(qrContent);
+            subFlow(new SignTxFlow(otherPartyFlow, SignTransactionFlow.tracker()));
 
             return null;
         }
