@@ -12,6 +12,7 @@ import net.corda.core.schemas.PersistentState;
 import net.corda.core.schemas.QueryableState;
 
 import javax.servlet.http.Part;
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,49 +22,49 @@ import java.util.List;
  * A state must implement [ContractState] or one of its descendants.
  */
 public class BuyerTransState implements LinearState, QueryableState {
-    private final SVG qrTransCode; // QR code for transaction
     private final Party buyer;
     private final Party gov;
 
     // instance variables for the decoded qr code information
-    private final Float totalValue;
-    private final Float taxValue;
-    private final UniqueIdentifier transId;
-    private final UniqueIdentifier compId;
+     private final Float totalValue;
+     private final Float taxValue;
+     private final UniqueIdentifier transId;
+     private final UniqueIdentifier companyId;
 
     /**
-     * @param totalValue the total value of the transaction.
-     * @param taxValue the tax paid on the transaction
-     * @param seller the party generating the transaction
+     * @param qrCodeFile file of the scanned in qr code
+     * @param buyer the party generating the transaction
      * @param gov the government validating the transactions against user submissions
      */
-    public POSTransState(File qrCodeFile,
-                         Party buyer,
-                         Party gov)
+    public BuyerTransState(File qrCodeFile,
+                           Party buyer,
+                           Party gov)
     {
-        String decodedFile;
+        this.buyer = buyer;
+        this.gov = gov;
+
+        // TODO: Extract information out of qr code file
+        try {
+            String decodedFile = QRCodeReader.decodeQRCode(qrCodeFile);
+            System.out.println(decodedFile);
+        } catch (Exception e) {
+            System.out.println(e.getStackTrace());
+        }
+
+        // TODO: fill in information from qr code
+        this.totalValue = null;
+        this.taxValue = null;
+        this.transId = null;
+        this.companyId = null;
     }
 
-    public Party getBuyer() { return buyer; }
-    public Party getGov() { return gov; }
-    public Float getTotalValue() { return totalValue; }
-    public Float getTaxValue() { return taxValue; }
-
-    @Override public UniqueIdentifier getLinearId() { return linearId; }
+    @Override public UniqueIdentifier getLinearId() { return null; }
     @Override public List<AbstractParty> getParticipants() {
-        return Arrays.asList(seller, gov);
+        return Arrays.asList(buyer, gov);
     }
 
     @Override public PersistentState generateMappedObject(MappedSchema schema) {
-        if (schema instanceof IOUSchemaV1) {
-            return new IOUSchemaV1.PersistentIOU(
-                    this.seller.getName().toString(),
-                    this.gov.getName().toString(),
-                    1, // random value to satisfy the arguments
-                    this.linearId.getId());
-        } else {
-            throw new IllegalArgumentException("Unrecognised schema $schema");
-        }
+        return null;
     }
 
     @Override public Iterable<MappedSchema> supportedSchemas() {
@@ -72,6 +73,7 @@ public class BuyerTransState implements LinearState, QueryableState {
 
     @Override
     public String toString() {
-        return String.format("BuyerTransState(totalValue=%s, taxValue=%s, buyer=%s, gov=%s, linearId=%s)", totalValue, taxValue, seller, gov, linearId);
+        return String.format("BuyerTransState(...)");
     }
+
 }
