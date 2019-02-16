@@ -20,15 +20,16 @@ import java.util.List;
  *
  * A state must implement [ContractState] or one of its descendants.
  */
-public class POSTransState implements LinearState, QueryableState {
-    private final Float totalValue; // full value of transaction
-    private final Float taxValue; // amount of tax on transaction paid
-    private final Float totalLiability; // total amount cumulative tax owing
-    private final Party seller; // seller or vender
-    private final Party gov; // government authority node
+public class BuyerTransState implements LinearState, QueryableState {
     private final SVG qrTransCode; // QR code for transaction
+    private final Party buyer;
+    private final Party gov;
 
-    private final UniqueIdentifier linearId;
+    // instance variables for the decoded qr code information
+    private final Float totalValue;
+    private final Float taxValue;
+    private final UniqueIdentifier transId;
+    private final UniqueIdentifier compId;
 
     /**
      * @param totalValue the total value of the transaction.
@@ -36,29 +37,17 @@ public class POSTransState implements LinearState, QueryableState {
      * @param seller the party generating the transaction
      * @param gov the government validating the transactions against user submissions
      */
-    public POSTransState(Float totalValue ,
-                          Float taxValue ,
-                          Float totalLiability ,
-                          Party seller,
-                          Party gov ,
-                          SVG qrTransCode,
-                          UniqueIdentifier linearId) // represents company
+    public POSTransState(File qrCodeFile,
+                         Party buyer,
+                         Party gov)
     {
-        this.totalValue = totalValue;
-        this.taxValue = taxValue;
-        this.totalLiability = totalLiability;
-        this.seller = seller;
-        this.gov = gov;
-        this.qrTransCode = qrTransCode;
-        this.linearId = linearId;
+        String decodedFile;
     }
 
+    public Party getBuyer() { return buyer; }
+    public Party getGov() { return gov; }
     public Float getTotalValue() { return totalValue; }
     public Float getTaxValue() { return taxValue; }
-    public Float getTotalLiability() { return  totalLiability; }
-    public Party getSeller() { return seller; }
-    public Party getGov() { return gov; }
-    public SVG getQrTransCode() { return qrTransCode; }
 
     @Override public UniqueIdentifier getLinearId() { return linearId; }
     @Override public List<AbstractParty> getParticipants() {
@@ -83,6 +72,6 @@ public class POSTransState implements LinearState, QueryableState {
 
     @Override
     public String toString() {
-        return String.format("POSTransState(totalValue=%s, taxValue=%s, seller=%s, gov=%s, linearId=%s)", totalValue, taxValue, seller, gov, linearId);
+        return String.format("BuyerTransState(totalValue=%s, taxValue=%s, buyer=%s, gov=%s, linearId=%s)", totalValue, taxValue, seller, gov, linearId);
     }
 }
