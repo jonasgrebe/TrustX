@@ -92,7 +92,7 @@ public class ExampleApi {
      * The flow is invoked asynchronously. It returns a future when the flow's call() method returns.
      */
     @PUT
-    @Path("create-iou")
+    @Path("create-pos")
     public Response createIOU(@QueryParam("iouValue") int iouValue, @QueryParam("partyName") CordaX500Name partyName) throws InterruptedException, ExecutionException {
         if (iouValue <= 0) {
             return Response.status(BAD_REQUEST).entity("Query parameter 'iouValue' must be non-negative.\n").build();
