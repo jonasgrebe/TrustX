@@ -2,6 +2,7 @@ package com.example.state;
 
 import com.example.schema.IOUSchemaV1;
 import com.google.common.collect.ImmutableList;
+import kotlinx.html.SVG;
 import net.corda.core.contracts.LinearState;
 import net.corda.core.contracts.UniqueIdentifier;
 import net.corda.core.identity.AbstractParty;
@@ -10,6 +11,7 @@ import net.corda.core.schemas.MappedSchema;
 import net.corda.core.schemas.PersistentState;
 import net.corda.core.schemas.QueryableState;
 
+import javax.servlet.http.Part;
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,8 +23,10 @@ import java.util.List;
 public class POSTransState implements LinearState, QueryableState {
     private final Float totalValue; // full value of transaction
     private final Float taxValue; // amount of tax on transaction paid
+    private final Float totalLiability; // total amount cumulative tax owing
     private final Party seller; // seller or vender
     private final Party gov; // government authority node
+    private final SVG qrTransCode; // QR code for transaction
 
     private final UniqueIdentifier linearId;
 
@@ -34,20 +38,28 @@ public class POSTransState implements LinearState, QueryableState {
      */
     public POSTransState(Float totalValue ,
                           Float taxValue ,
+                          Float totalLiability ,
                           Party seller,
                           Party gov ,
-                          UniqueIdentifier linearId)
+                          SVG qrTransCode,
+                          UniqueIdentifier linearId) // represents company
     {
         this.totalValue = totalValue;
         this.taxValue = taxValue;
+        this.totalLiability = totalLiability;
         this.seller = seller;
         this.gov = gov;
+        this.qrTransCode = qrTransCode;
         this.linearId = linearId;
     }
 
     public Float getTotalValue() { return totalValue; }
     public Float getTaxValue() { return taxValue; }
+    public Float getTotalLiability() { return  totalLiability; }
     public Party getSeller() { return seller; }
+    public Party getGov() { return gov; }
+    public SVG getQrTransCode() { return qrTransCode; }
+
     @Override public UniqueIdentifier getLinearId() { return linearId; }
     @Override public List<AbstractParty> getParticipants() {
         return Arrays.asList(seller, gov);

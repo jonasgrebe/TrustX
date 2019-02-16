@@ -1,16 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="android" />
+        <module name="core" />
+        <module name="javase" />
+      </profile>
+    </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="android" target="1.7" />
+      <module name="com.example.java-source.integrationTest" target="1.8" />
+      <module name="com.example.java-source.main" target="1.8" />
+      <module name="com.example.java-source.test" target="1.8" />
+      <module name="com.example.kotlin-source.integrationTest" target="1.8" />
+      <module name="com.example.kotlin-source.main" target="1.8" />
+      <module name="com.example.kotlin-source.test" target="1.8" />
+      <module name="core" target="1.7" />
       <module name="java-source_integrationTest" target="1.8" />
       <module name="java-source_main" target="1.8" />
       <module name="java-source_test" target="1.8" />
+      <module name="javase" target="1.7" />
       <module name="kotlin-source_integrationTest" target="1.8" />
       <module name="kotlin-source_main" target="1.8" />
       <module name="kotlin-source_test" target="1.8" />
+      <module name="qrgen-parent" target="1.7" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_STRING" value="-parameters" />
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="android" options="" />
+      <module name="core" options="" />
+      <module name="javase" options="" />
+      <module name="qrgen-parent" options="" />
+    </option>
   </component>
 </project>
