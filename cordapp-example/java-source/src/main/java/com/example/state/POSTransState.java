@@ -53,7 +53,7 @@ public class POSTransState implements LinearState, QueryableState {
         this.gov = gov;
         this.transId = transId;
         this.companyId = companyId;
-        
+
 
 // SAMPLE for Vcard
 //        // encode contact data as vcard using defaults
@@ -75,6 +75,7 @@ public class POSTransState implements LinearState, QueryableState {
     public Party getGov() { return gov; }
     //public SVG getQrTransCode() { return qrTransCode; }
 
+    public UniqueIdentifier getTransId() { return }
     @Override public UniqueIdentifier getLinearId() { return companyId; }
     @Override public List<AbstractParty> getParticipants() {
         return Arrays.asList(seller, gov);
