@@ -9,6 +9,7 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import net.corda.core.contracts.Command;
 import net.corda.core.contracts.ContractState;
+import net.corda.core.contracts.StateAndRef;
 import net.corda.core.crypto.SecureHash;
 import net.corda.core.flows.*;
 import net.corda.core.identity.Party;
@@ -16,6 +17,8 @@ import net.corda.core.transactions.SignedTransaction;
 import net.corda.core.transactions.TransactionBuilder;
 import net.corda.core.utilities.ProgressTracker;
 import net.corda.core.utilities.ProgressTracker.Step;
+
+import java.util.List;
 
 import static com.example.contract.BuyerContract.BUYER_CONTRACT_ID;
 import static net.corda.core.contracts.ContractsDSL.requireThat;
@@ -147,11 +150,26 @@ public class QRScanFlow {
                     BuyerTransState btState = (BuyerTransState)stx.getTx().getOutput(0);
                     requireThat(require -> {
                         String userHash = btState.getTxHash();
-                        //TODO need to filter on this correctly
-                        SecureHash chainHash = getServiceHub().getVaultService().queryBy(POSTransState.class).getStates().get(0).getRef().getTxhash();
 
-                        require.using("TxHash from output state is equal to TxHash in chain", chainHash.toString().equals(userHash));
+//                        //TODO need to filter on this correctly
+//                        SecureHash chainHash = getServiceHub().getVaultService().queryBy(POSTransState.class).getStates().get(0).getRef().getTxhash();
+//                        require.using("TxHash from output state is equal to TxHash in chain", chainHash.toString().equals(userHash));
 
+                        // Check all txHash from all transactions in vault
+                        List<StateAndRef<POSTransState>> chainTransHashes = getServiceHub().getVaultService().queryBy(POSTransState.class).getStates();
+
+                        boolean matched = false;
+                        for (StateAndRef<POSTransState> trans : chainTransHashes) {
+                            if (trans.getRef().getTxhash().toString().equals(userHash)) {
+                                matched = true;
+                                break;
+                            }
+                        }
+
+                        require.using("TxHash from output state is equal to some TxHash in chain", matched);
+                        
+
+                        // How to catch an exception
                         return null;
                     });
                 }
