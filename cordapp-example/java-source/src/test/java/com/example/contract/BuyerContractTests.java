@@ -1,29 +1,28 @@
 package com.example.contract;
 
-import com.example.state.IOUState;
+import com.example.state.BuyerTransState;
 import com.google.common.collect.ImmutableList;
-import net.corda.core.contracts.UniqueIdentifier;
 import net.corda.core.identity.CordaX500Name;
 import net.corda.testing.core.TestIdentity;
 import net.corda.testing.node.MockServices;
 import org.junit.Test;
 
-import static com.example.contract.IOUContract.IOU_CONTRACT_ID;
+import static com.example.contract.BuyerContract.BUYER_CONTRACT_ID;
 import static net.corda.testing.node.NodeTestUtils.ledger;
 
-public class IOUContractTests {
+public class BuyerContractTests {
     static private final MockServices ledgerServices = new MockServices();
-    static private TestIdentity megaCorp = new TestIdentity(new CordaX500Name("MegaCorp", "London", "GB"));
-    static private TestIdentity miniCorp = new TestIdentity(new CordaX500Name("MiniCorp", "London", "GB"));
-    static private int iouValue = 1;
+    static private TestIdentity joeBuyer = new TestIdentity(new CordaX500Name("JoeBuyer", "Birmingham", "GB"));
+    static private TestIdentity taxGov = new TestIdentity(new CordaX500Name("taxGov", "Sussex", "GB"));
+    static private String qrCodeFilePath = "/home/anixon604/dev/samples/cordapp-example/QR_42.png";
 
     @Test
     public void transactionMustIncludeCreateCommand() {
         ledger(ledgerServices, (ledger -> {
             ledger.transaction(tx -> {
-                tx.output(IOU_CONTRACT_ID, new IOUState(iouValue, miniCorp.getParty(), megaCorp.getParty(), new UniqueIdentifier()));
+                tx.output(BUYER_CONTRACT_ID, new BuyerTransState(qrCodeFilePath, joeBuyer.getParty(), taxGov.getParty()));
                 tx.fails();
-                tx.command(ImmutableList.of(megaCorp.getPublicKey(), miniCorp.getPublicKey()), new IOUContract.Commands.Create());
+                tx.command(ImmutableList.of(joeBuyer.getPublicKey(), taxGov.getPublicKey()), new BuyerContract.Commands.Create());
                 tx.verifies();
                 return null;
             });
@@ -32,39 +31,11 @@ public class IOUContractTests {
     }
 
     @Test
-    public void transactionMustHaveNoInputs() {
+    public void userMustSignTransaction() {
         ledger(ledgerServices, (ledger -> {
             ledger.transaction(tx -> {
-                tx.input(IOU_CONTRACT_ID, new IOUState(iouValue, miniCorp.getParty(), megaCorp.getParty(), new UniqueIdentifier()));
-                tx.output(IOU_CONTRACT_ID, new IOUState(iouValue, miniCorp.getParty(), megaCorp.getParty(), new UniqueIdentifier()));
-                tx.command(ImmutableList.of(megaCorp.getPublicKey(), miniCorp.getPublicKey()), new IOUContract.Commands.Create());
-                tx.failsWith("No inputs should be consumed when issuing an IOU.");
-                return null;
-            });
-            return null;
-        }));
-    }
-
-    @Test
-    public void transactionMustHaveOneOutput() {
-        ledger(ledgerServices, (ledger -> {
-            ledger.transaction(tx -> {
-                tx.output(IOU_CONTRACT_ID, new IOUState(iouValue, miniCorp.getParty(), megaCorp.getParty(), new UniqueIdentifier()));
-                tx.output(IOU_CONTRACT_ID, new IOUState(iouValue, miniCorp.getParty(), megaCorp.getParty(), new UniqueIdentifier()));
-                tx.command(ImmutableList.of(megaCorp.getPublicKey(), miniCorp.getPublicKey()), new IOUContract.Commands.Create());
-                tx.failsWith("Only one output state should be created.");
-                return null;
-            });
-            return null;
-        }));
-    }
-
-    @Test
-    public void lenderMustSignTransaction() {
-        ledger(ledgerServices, (ledger -> {
-            ledger.transaction(tx -> {
-                tx.output(IOU_CONTRACT_ID, new IOUState(iouValue, miniCorp.getParty(), megaCorp.getParty(), new UniqueIdentifier()));
-                tx.command(miniCorp.getPublicKey(), new IOUContract.Commands.Create());
+                tx.output(BUYER_CONTRACT_ID, new BuyerTransState(qrCodeFilePath, joeBuyer.getParty(), taxGov.getParty()));
+                tx.command(taxGov.getPublicKey(), new BuyerContract.Commands.Create());
                 tx.failsWith("All of the participants must be signers.");
                 return null;
             });
@@ -73,11 +44,11 @@ public class IOUContractTests {
     }
 
     @Test
-    public void borrowerMustSignTransaction() {
+    public void govMustSignTransaction() {
         ledger(ledgerServices, (ledger -> {
             ledger.transaction(tx -> {
-                tx.output(IOU_CONTRACT_ID, new IOUState(iouValue, miniCorp.getParty(), megaCorp.getParty(), new UniqueIdentifier()));
-                tx.command(megaCorp.getPublicKey(), new IOUContract.Commands.Create());
+                tx.output(BUYER_CONTRACT_ID, new BuyerTransState(qrCodeFilePath, joeBuyer.getParty(), taxGov.getParty()));
+                tx.command(joeBuyer.getPublicKey(), new BuyerContract.Commands.Create());
                 tx.failsWith("All of the participants must be signers.");
                 return null;
             });
@@ -85,29 +56,18 @@ public class IOUContractTests {
         }));
     }
 
-    @Test
-    public void lenderIsNotBorrower() {
-        ledger(ledgerServices, (ledger -> {
-            ledger.transaction(tx -> {
-                tx.output(IOU_CONTRACT_ID, new IOUState(iouValue, megaCorp.getParty(), megaCorp.getParty(), new UniqueIdentifier()));
-                tx.command(ImmutableList.of(megaCorp.getPublicKey(), miniCorp.getPublicKey()), new IOUContract.Commands.Create());
-                tx.failsWith("The lender and the borrower cannot be the same entity.");
-                return null;
-            });
-            return null;
-        }));
-    }
+//    @Test
+//    public void filePathMustNotBeNull() {
+//        ledger(ledgerServices, (ledger -> {
+//            ledger.transaction(tx -> {
+//                tx.output(BUYER_CONTRACT_ID, new BuyerTransState("", joeBuyer.getParty(), taxGov.getParty()));
+//                tx.command(ImmutableList.of(joeBuyer.getPublicKey(), taxGov.getPublicKey()), new BuyerContract.Commands.Create());
+//                tx.failsWith("File path should not be null");
+//                return null;
+//            });
+//            return null;
+//        }));
+//    }
 
-    @Test
-    public void cannotCreateNegativeValueIOUs() {
-        ledger(ledgerServices, (ledger -> {
-            ledger.transaction(tx -> {
-                tx.output(IOU_CONTRACT_ID, new IOUState(-1, miniCorp.getParty(), megaCorp.getParty(), new UniqueIdentifier()));
-                tx.command(ImmutableList.of(megaCorp.getPublicKey(), miniCorp.getPublicKey()), new IOUContract.Commands.Create());
-                tx.failsWith("The IOU's value must be non-negative.");
-                return null;
-            });
-            return null;
-        }));
-    }
+
 }

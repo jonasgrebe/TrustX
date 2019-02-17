@@ -21,7 +21,7 @@ import java.util.List;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 
-public class IOUFlowTests {
+public class QRScanFlowTests {
     private MockNetwork network;
     private StartedMockNode a;
     private StartedMockNode b;
