@@ -1,11 +1,17 @@
 package com.example.api;
 
+import com.example.contract.BuyerContract;
 import com.example.flow.ExampleFlow;
+import com.example.flow.QRScanFlow;
+import com.example.flow.TrustXFlow;
 import com.example.schema.IOUSchemaV1;
+import com.example.state.BuyerTransState;
 import com.example.state.IOUState;
+import com.example.state.POSTransState;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import net.corda.core.contracts.StateAndRef;
+import net.corda.core.contracts.UniqueIdentifier;
 import net.corda.core.identity.CordaX500Name;
 import net.corda.core.identity.Party;
 import net.corda.core.messaging.CordaRPCOps;
@@ -34,6 +40,7 @@ import static javax.ws.rs.core.Response.Status.OK;
 public class ExampleApi {
     private final CordaRPCOps rpcOps;
     private final CordaX500Name myLegalName;
+    private final UniqueIdentifier companyId; // COMPANY ID DOES NOT CHANGE
 
     private final List<String> serviceNames = ImmutableList.of("Notary");
 
@@ -42,7 +49,97 @@ public class ExampleApi {
     public ExampleApi(CordaRPCOps rpcOps) {
         this.rpcOps = rpcOps;
         this.myLegalName = rpcOps.nodeInfo().getLegalIdentities().get(0).getName();
+        this.companyId = new UniqueIdentifier();
     }
+
+    /**
+     * BEGIN CUSTOM ENDPOINTS FOR TAX APP ==============================================
+     */
+
+    /**
+     * Displays all POS Transaction states that exist in the node's vault.
+     */
+    @GET
+    @Path("postrans")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<StateAndRef<POSTransState>> getPosTrans() {
+        return rpcOps.vaultQuery(POSTransState.class).getStates();
+    }
+
+    /**
+     * Displays all Buyer Transaction states that exist in the node's vault.
+     */
+    @GET
+    @Path("buytrans")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<StateAndRef<BuyerTransState>> getBuyerTrans() {
+        return rpcOps.vaultQuery(BuyerTransState.class).getStates();
+    }
+
+    @PUT
+    @Path("create-pos")
+    public Response createPOS(@QueryParam("totalValue") Float totalValue, @QueryParam("taxValue") Float taxValue,
+                              @QueryParam("partyName") CordaX500Name partyName) throws InterruptedException, ExecutionException {
+        if (totalValue <= 0) {
+            return Response.status(BAD_REQUEST).entity("Query parameter 'totalValue' must be non-negative.\n").build();
+        }
+        if (partyName == null) {
+            return Response.status(BAD_REQUEST).entity("Query parameter 'partyName' missing or has wrong format.\n").build();
+        }
+
+        final Party gov = rpcOps.wellKnownPartyFromX500Name(partyName);
+        if (gov == null) {
+            return Response.status(BAD_REQUEST).entity("Party named " + partyName + "cannot be found.\n").build();
+        }
+
+        try {
+            final SignedTransaction signedTx = rpcOps // NEW transID for each, companyID if fixed, hardcoded totalLiability (taxValue*2)
+                    .startTrackedFlowDynamic(TrustXFlow.Initiator.class, totalValue, taxValue, taxValue*2, gov, new UniqueIdentifier(), companyId)
+                    .getReturnValue()
+                    .get();
+
+            final String msg = String.format("Transaction id %s committed to ledger.\n", signedTx.getId());
+            return Response.status(CREATED).entity(msg).build();
+
+        } catch (Throwable ex) {
+            final String msg = ex.getMessage();
+            logger.error(ex.getMessage(), ex);
+            return Response.status(BAD_REQUEST).entity(msg).build();
+        }
+    }
+
+    @PUT
+    @Path("create-buy")
+    public Response createBuy(@QueryParam("partyName") CordaX500Name partyName) throws InterruptedException, ExecutionException {
+        if (partyName == null) {
+            return Response.status(BAD_REQUEST).entity("Query parameter 'partyName' missing or has wrong format.\n").build();
+        }
+
+        final Party gov = rpcOps.wellKnownPartyFromX500Name(partyName);
+        if (gov == null) {
+            return Response.status(BAD_REQUEST).entity("Party named " + partyName + "cannot be found.\n").build();
+        }
+
+        try {
+            final SignedTransaction signedTx = rpcOps
+                    .startTrackedFlowDynamic(QRScanFlow.Initiator.class, gov)
+                    .getReturnValue()
+                    .get();
+
+            final String msg = String.format("Transaction id %s committed to ledger.\n", signedTx.getId());
+            return Response.status(CREATED).entity(msg).build();
+
+        } catch (Throwable ex) {
+            final String msg = ex.getMessage();
+            logger.error(ex.getMessage(), ex);
+            return Response.status(BAD_REQUEST).entity(msg).build();
+        }
+    }
+
+
+    /**
+     * ================================================== END CUSTOM ENDPOINTS FOR TAX APP
+     */
 
     /**
      * Returns the node's name.
@@ -92,7 +189,7 @@ public class ExampleApi {
      * The flow is invoked asynchronously. It returns a future when the flow's call() method returns.
      */
     @PUT
-    @Path("create-pos")
+    @Path("create-iou")
     public Response createIOU(@QueryParam("iouValue") int iouValue, @QueryParam("partyName") CordaX500Name partyName) throws InterruptedException, ExecutionException {
         if (iouValue <= 0) {
             return Response.status(BAD_REQUEST).entity("Query parameter 'iouValue' must be non-negative.\n").build();
