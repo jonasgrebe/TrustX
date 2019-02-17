@@ -35,10 +35,12 @@ public class BuyerTransState implements LinearState, QueryableState {
      private final Float taxValue;
      private final UniqueIdentifier transId;
      private final UniqueIdentifier companyId;
-     private final SecureHash txHash;
+     private final String txHash;
+     //private final SecureHash txHash;
+     private final String qrCodeFilePath;
 
     /**
-     * @param qrCodeFile file of the scanned in qr code
+     * @param qrCodeFilePath file of the scanned in qr code
      * @param buyer the party generating the transaction
      * @param gov the government validating the transactions against user submissionn
      */
@@ -48,6 +50,7 @@ public class BuyerTransState implements LinearState, QueryableState {
     {
         this.buyer = buyer;
         this.gov = gov;
+        this.qrCodeFilePath = qrCodeFilePath;
 
         String charset = "UTF-8"; // or "ISO-8859-1"
         Map hintMap = new HashMap();
@@ -60,6 +63,7 @@ public class BuyerTransState implements LinearState, QueryableState {
             System.out.println(e.getStackTrace());
         }
         QRContent qrContent = QRContent.deserialize(qrContentString);
+
 
         this.totalValue = qrContent.getTotalValue();
         this.taxValue = qrContent.getTaxValue();
@@ -76,14 +80,6 @@ public class BuyerTransState implements LinearState, QueryableState {
         return taxValue;
     }
 
-    public Party getBuyer() {
-        return buyer;
-    }
-
-    public Party getGov() {
-        return gov;
-    }
-
     public UniqueIdentifier getTransId() {
         return transId;
     }
@@ -92,9 +88,20 @@ public class BuyerTransState implements LinearState, QueryableState {
         return companyId;
     }
 
-    public SecureHash getTxHash() {
+    public String getTxHash() {
         return txHash;
     }
+
+    public Party getBuyer() {
+        return buyer;
+    }
+
+    public Party getGov() {
+        return gov;
+    }
+
+    public String getQrCodeFilePath() { return qrCodeFilePath; }
+
 
     @Override public UniqueIdentifier getLinearId() { return null; }
     @Override public List<AbstractParty> getParticipants() {

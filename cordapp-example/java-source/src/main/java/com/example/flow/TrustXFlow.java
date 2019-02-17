@@ -142,7 +142,7 @@ public class TrustXFlow {
             String charset = "UTF-8"; // or "ISO-8859-1"
             Map hintMap = new HashMap();
             hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
-            String filePath = "QR_"+ 42 + ".png";
+            String filePath = "/home/anixon604/dev/samples/cordapp-example/QR_42.png";
 
             try {
                 QRCode.createQRCode(qrContent.serialize(), filePath, charset, hintMap, 200, 200);
@@ -175,13 +175,7 @@ public class TrustXFlow {
 
                 @Override
                 protected void checkTransaction(SignedTransaction stx) {
-                    requireThat(require -> {
-                        ContractState output = stx.getTx().getOutputs().get(0).getData();
-                        require.using("This must be an IOU transaction.", output instanceof IOUState);
-                        IOUState iou = (IOUState) output;
-                        require.using("I won't accept IOUs with a value over 100.", iou.getValue() <= 100);
-                        return null;
-                    });
+
                 }
             }
 

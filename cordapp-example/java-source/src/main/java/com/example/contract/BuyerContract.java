@@ -38,26 +38,29 @@ public class BuyerContract implements Contract {
         final CommandWithParties<Commands.Create> command = requireSingleCommand(tx.getCommands(), Commands.Create.class);
         requireThat(require -> {
             // Generic constraints around the POS transaction.
-            require.using("There must be a transaction ID.",
-                    tx.getOutputs().size() == 1);
-
 
             final BuyerTransState out = tx.outputsOfType(BuyerTransState.class).get(0);
+            require.using("File path should not be null",
+                    out.getQrCodeFilePath().length() > 1);
+            require.using("All of the participants must be signers.",
+                    command.getSigners().containsAll(out.getParticipants().stream().map(AbstractParty::getOwningKey).collect(Collectors.toList())));
+
+
+            // CHECK AFTER QR Processing
+            require.using("Tax Value should not be empty",
+                    out.getTotalValue() >= 0 );
+            require.using("Total Tax Value should be >=0",
+                    out.getTaxValue() >= 0 );
+            require.using("There must be a transaction ID.",
+                    out.getTransId() != null);
             require.using("There has to be a hash",
                     out.getTxHash() != null);
             require.using("Buyer value should be empty",
                     out.getBuyer() != null);
-            require.using("Tax Value should not be empty",
-                    out.getTotalValue() >= 0 );
-            require.using("Total Tax Value should be >=0",
-                            out.getTaxValue() >= 0 );
             require.using("Government should not be null",
                         out.getGov() != null);
 
-//          DO we need requirements for composition of the QR properties
 
-            require.using("All of the participants must be signers.",
-                    command.getSigners().containsAll(out.getParticipants().stream().map(AbstractParty::getOwningKey).collect(Collectors.toList())));
 
             return null;
         });

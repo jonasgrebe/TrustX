@@ -1,15 +1,13 @@
 package com.example.flow;
 
 import co.paralleluniverse.fibers.Suspendable;
-import com.example.contract.BuyerContract;
-import com.example.state.BuyerTransState;
+import com.example.contract.IOUContract;
 import com.example.state.IOUState;
-import com.example.state.POSTransState;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import net.corda.core.contracts.Command;
 import net.corda.core.contracts.ContractState;
-import net.corda.core.crypto.SecureHash;
+import net.corda.core.contracts.UniqueIdentifier;
 import net.corda.core.flows.*;
 import net.corda.core.identity.Party;
 import net.corda.core.transactions.SignedTransaction;
@@ -17,7 +15,7 @@ import net.corda.core.transactions.TransactionBuilder;
 import net.corda.core.utilities.ProgressTracker;
 import net.corda.core.utilities.ProgressTracker.Step;
 
-import static com.example.contract.BuyerContract.BUYER_CONTRACT_ID;
+import static com.example.contract.IOUContract.IOU_CONTRACT_ID;
 import static net.corda.core.contracts.ContractsDSL.requireThat;
 
 /**
@@ -31,12 +29,13 @@ import static net.corda.core.contracts.ContractsDSL.requireThat;
  *
  * All methods called within the [FlowLogic] sub-class need to be annotated with the @Suspendable annotation.
  */
-public class QRScanFlow {
+public class ExampleFlow {
     @InitiatingFlow
     @StartableByRPC
     public static class Initiator extends FlowLogic<SignedTransaction> {
 
-        private final Party gov;
+        private final int iouValue;
+        private final Party otherParty;
 
         private final Step GENERATING_TRANSACTION = new Step("Generating transaction based on new IOU.");
         private final Step VERIFYING_TRANSACTION = new Step("Verifying contract constraints.");
@@ -65,8 +64,9 @@ public class QRScanFlow {
                 FINALISING_TRANSACTION
         );
 
-        public Initiator(Party gov) {
-            this.gov = gov;
+        public Initiator(int iouValue, Party otherParty) {
+            this.iouValue = iouValue;
+            this.otherParty = otherParty;
         }
 
         @Override
@@ -87,18 +87,12 @@ public class QRScanFlow {
             progressTracker.setCurrentStep(GENERATING_TRANSACTION);
             // Generate an unsigned transaction.
             Party me = getOurIdentity();
-
-            // Assumption: Scanned file available
-            String filePath = "/home/anixon604/dev/samples/cordapp-example/QR_42.png";
-
-            BuyerTransState buyerTransState = new BuyerTransState(filePath, me, gov);
-
-            final Command<BuyerContract.Commands.Create> txCommand = new Command(
-                    new BuyerContract.Commands.Create(),
-                    ImmutableList.of(me.getOwningKey(), gov.getOwningKey()));
-
+            IOUState iouState = new IOUState(iouValue, me, otherParty, new UniqueIdentifier());
+            final Command<IOUContract.Commands.Create> txCommand = new Command<>(
+                    new IOUContract.Commands.Create(),
+                    ImmutableList.of(iouState.getLender().getOwningKey(), iouState.getBorrower().getOwningKey()));
             final TransactionBuilder txBuilder = new TransactionBuilder(notary)
-                    .addOutputState(buyerTransState, BUYER_CONTRACT_ID)
+                    .addOutputState(iouState, IOU_CONTRACT_ID)
                     .addCommand(txCommand);
 
             // Stage 2.
@@ -114,7 +108,7 @@ public class QRScanFlow {
             // Stage 4.
             progressTracker.setCurrentStep(GATHERING_SIGS);
             // Send the state to the counterparty, and receive it back with their signature.
-            FlowSession otherPartySession = initiateFlow(gov);
+            FlowSession otherPartySession = initiateFlow(otherParty);
             final SignedTransaction fullySignedTx = subFlow(
                     new CollectSignaturesFlow(partSignedTx, ImmutableSet.of(otherPartySession), CollectSignaturesFlow.Companion.tracker()));
 
@@ -144,22 +138,17 @@ public class QRScanFlow {
 
                 @Override
                 protected void checkTransaction(SignedTransaction stx) {
-                    BuyerTransState btState = (BuyerTransState)stx.getTx().getOutput(0);
                     requireThat(require -> {
-                        String userHash = btState.getTxHash();
-                        //TODO need to filter on this correctly
-                        SecureHash chainHash = getServiceHub().getVaultService().queryBy(POSTransState.class).getStates().get(0).getRef().getTxhash();
-
-                        require.using("TxHash from output state is equal to TxHash in chain", chainHash.toString().equals(userHash));
-
+                        ContractState output = stx.getTx().getOutputs().get(0).getData();
+                        require.using("This must be an IOU transaction.", output instanceof IOUState);
+                        IOUState iou = (IOUState) output;
+                        require.using("I won't accept IOUs with a value over 100.", iou.getValue() <= 100);
                         return null;
                     });
                 }
             }
 
-            subFlow(new SignTxFlow(otherPartyFlow, SignTransactionFlow.tracker()));
-
-            return null;
+            return subFlow(new SignTxFlow(otherPartyFlow, SignTransactionFlow.Companion.tracker()));
         }
     }
 }

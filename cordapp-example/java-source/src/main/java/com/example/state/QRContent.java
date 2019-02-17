@@ -1,6 +1,7 @@
 package com.example.state;
 
 import com.google.gson.Gson;
+import flexjson.JSONDeserializer;
 import net.corda.core.contracts.UniqueIdentifier;
 import net.corda.core.crypto.SecureHash;
 
@@ -9,7 +10,9 @@ public class QRContent {
     private final Float taxValue; // amount of tax on transaction paid
     private final UniqueIdentifier transId; // Unique transaction id
     private final UniqueIdentifier companyId;
-    private final SecureHash txHash;
+    //private final SecureHash txHash;
+    private final String txHash;
+
 
 
     public QRContent(Float totalValue, Float taxValue, UniqueIdentifier transId, UniqueIdentifier companyId, SecureHash txHash) {
@@ -17,7 +20,7 @@ public class QRContent {
         this.taxValue = taxValue;
         this.transId = transId;
         this.companyId = companyId;
-        this.txHash = txHash;
+        this.txHash = txHash.toString();
     }
 
     public Float getTaxValue() {
@@ -36,7 +39,7 @@ public class QRContent {
         return transId;
     }
 
-    public SecureHash getTxHash() {
+    public String getTxHash() {
         return txHash;
     }
 
@@ -45,6 +48,10 @@ public class QRContent {
     }
 
     public static QRContent deserialize(String jsonString){
+
         return new Gson().fromJson(jsonString, QRContent.class);
+//        JSONDeserializer<QRContent> des = new JSONDeserializer<QRContent>();
+//        //JSONDeserializer<QRContent> der = new JSONDeserializer<QRContent>();
+//        return des.deserialize(jsonString, QRContent.class);
     }
 }
