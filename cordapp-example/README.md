@@ -12,7 +12,7 @@ Oracle JDK 8
 
 ## Built With
 
-* [corda](https://docs.corda.net/) - open-source platform for blockchain development
+* [corda] (https://docs.corda.net/) - open-source platform for blockchain development
 * [ZXing] (https://github.com/zxing/zxing) - barcode scanning library for Java
 
 ## Authors
