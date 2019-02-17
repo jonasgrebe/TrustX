@@ -1,0 +1,12 @@
+
+[91m   ______               __
+  / ____/     _________/ /___ _
+ / /     __  / ___/ __  / __ `/         [94mTop tip: never say "oops", instead
+[91m/ /___  /_/ / /  / /_/ / /_/ /          [94malways say "Ah, Interesting!"
+[91m\____/     /_/   \__,_/\__,_/[m
+
+[99;1m--- Corda Open Source 3.3-corda (c834162) -----------------------------------------------
+
+[m
+Logs can be found in                    : /home/anixon604/dev/samples/cordapp-example/kotlin-source/build/nodes/PartyC/logs
+Database connection url is              : jdbc:h2:tcp://127.0.1.1:44991/node

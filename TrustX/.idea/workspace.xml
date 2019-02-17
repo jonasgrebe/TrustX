@@ -1,0 +1,977 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="25832ae6-0b7f-43e6-9d5d-e04e66556121" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run_Contract_Tests___Java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_Contract_Tests___Java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run_Example_Cordapp___Java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_Example_Cordapp___Java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run_Example_Cordapp___Kotlin.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_Example_Cordapp___Kotlin.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run_Example_RPC_Client___Java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_Example_RPC_Client___Java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run_Flow_Tests___Java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_Flow_Tests___Java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Run_Integration_Tests___Java.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Run_Integration_Tests___Java.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QR_42.png" beforeDir="false" afterPath="$PROJECT_DIR$/QR_42.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/out/production/classes/com/example/api/ExampleApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/out/production/classes/com/example/api/ExampleApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/out/production/classes/com/example/client/ExampleClientRPC.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/out/production/classes/com/example/client/ExampleClientRPC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/out/production/classes/com/example/contract/IOUContract.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/out/production/classes/com/example/contract/IOUContract.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/out/production/classes/com/example/flow/ExampleFlow$Acceptor$1SignTxFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/out/production/classes/com/example/flow/ExampleFlow$Acceptor$1SignTxFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/out/production/classes/com/example/schema/QrCard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/out/production/classes/com/example/state/POSTransState.class" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/out/production/classes/com/example/state/POSTransState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/out/production/classes/com/example/state/QRCodeReader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/src/main/java/com/example/flow/TrustXFlow.java" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/src/main/java/com/example/flow/TrustXFlow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-source/src/main/resources/exampleWeb/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/java-source/src/main/resources/exampleWeb/index2.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/integrationTest/classes/com/example/DriverBasedTests$node test$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/integrationTest/classes/com/example/DriverBasedTests$node test$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/integrationTest/classes/com/example/DriverBasedTests$node webserver test$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/integrationTest/classes/com/example/DriverBasedTests$node webserver test$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/integrationTest/classes/com/example/DriverBasedTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/integrationTest/classes/com/example/DriverBasedTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/api/ExampleApi$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/api/ExampleApi$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/api/ExampleApi$myious$results$1$partyType$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/api/ExampleApi$myious$results$1$partyType$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/api/ExampleApi.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/api/ExampleApi.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/api/ExampleApiKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/api/ExampleApiKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/client/ExampleClientRPC$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/client/ExampleClientRPC$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/client/ExampleClientRPC$main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/client/ExampleClientRPC$main$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/client/ExampleClientRPC.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/client/ExampleClientRPC.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/client/ExampleClientRPCKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/client/ExampleClientRPCKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/contract/IOUContract$Commands$Create.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/contract/IOUContract$Commands$Create.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/contract/IOUContract$Commands.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/contract/IOUContract$Commands.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/contract/IOUContract$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/contract/IOUContract$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/contract/IOUContract.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/contract/IOUContract.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Acceptor$call$signTransactionFlow$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Acceptor$call$signTransactionFlow$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Acceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Acceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion$FINALISING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion$FINALISING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion$GATHERING_SIGS.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion$GATHERING_SIGS.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion$GENERATING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion$GENERATING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion$SIGNING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion$SIGNING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion$VERIFYING_TRANSACTION.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion$VERIFYING_TRANSACTION.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator$Companion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow$Initiator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/flow/ExampleFlow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/plugin/ExamplePlugin$webApis$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/plugin/ExamplePlugin$webApis$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/plugin/ExamplePlugin.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/plugin/ExamplePlugin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/schema/IOUSchema.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/schema/IOUSchema.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/schema/IOUSchemaV1$PersistentIOU.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/schema/IOUSchemaV1$PersistentIOU.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/schema/IOUSchemaV1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/schema/IOUSchemaV1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/state/IOUState.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/production/classes/com/example/state/IOUState.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/NodeDriverKt$main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/NodeDriverKt$main$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/NodeDriverKt.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/NodeDriverKt.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$borrower must sign transaction$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$borrower must sign transaction$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$borrower must sign transaction$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$borrower must sign transaction$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$cannot create negative-value IOUs$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$cannot create negative-value IOUs$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$cannot create negative-value IOUs$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$cannot create negative-value IOUs$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$lender is not borrower$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$lender is not borrower$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$lender is not borrower$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$lender is not borrower$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$lender must sign transaction$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$lender must sign transaction$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$lender must sign transaction$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$lender must sign transaction$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must have no inputs$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must have no inputs$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must have no inputs$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must have no inputs$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must have one output$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must have one output$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must have one output$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must have one output$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must include Create command$1$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must include Create command$1$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must include Create command$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests$transaction must include Create command$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/contract/IOUContractTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/flow/IOUFlowTests$flow records the correct IOU in both parties' vaults$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/flow/IOUFlowTests$flow records the correct IOU in both parties' vaults$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/flow/IOUFlowTests$flow rejects invalid IOUs$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/flow/IOUFlowTests$flow rejects invalid IOUs$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/flow/IOUFlowTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/kotlin-source/out/test/classes/com/example/flow/IOUFlowTests.class" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.gradle/" />
+    <ignored path="$PROJECT_DIR$/build/" />
+    <ignored path="$PROJECT_DIR$/java-source/.gradle/" />
+    <ignored path="$PROJECT_DIR$/java-source/build/" />
+    <ignored path="$PROJECT_DIR$/java-source/out/" />
+    <ignored path="$PROJECT_DIR$/kotlin-source/.gradle/" />
+    <ignored path="$PROJECT_DIR$/kotlin-source/build/" />
+    <ignored path="$PROJECT_DIR$/kotlin-source/out/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view />
+      </state>
+    </system>
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java-source/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="368">
+              <caret line="74" column="29" lean-forward="true" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java-source/build/nodes/Seller/logs/node-nixT480s.log">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1695">
+              <caret line="113" selection-start-line="113" selection-end-line="113" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gradle.properties">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/kotlin-source/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-990" />
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/flow/TrustXFlow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="147">
+              <caret line="138" column="120" selection-start-line="138" selection-start-column="120" selection-end-line="138" selection-end-column="120" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/flow/QRScanFlow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="157" column="74" selection-start-line="157" selection-start-column="74" selection-end-line="157" selection-end-column="74" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java-source/src/test/java/com/example/contract/POSContractTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java-source/src/test/java/com/example/contract/BuyerContractTests.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/state/QRContent.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="585">
+              <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>checkTr</find>
+      <find>put</find>
+      <find>POS_CONTRACT_ID</find>
+      <find>POSTransState</find>
+      <find>getPar</find>
+      <find>POSContract</find>
+      <find>contain</find>
+      <find>unwr</find>
+      <find>ver</find>
+      <find>unr</find>
+      <find>corda_release_version</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/java-source/src/main/java/com/example/state/QRGenState.java" />
+        <option value="$PROJECT_DIR$/java-source/src/test/java/com/example/flow/QRScanFlowTests.java" />
+        <option value="$PROJECT_DIR$/java-source/src/test/java/com/example/flow/TrustXFlowTests.java" />
+        <option value="$PROJECT_DIR$/java-source/src/test/java/com/example/contract/POSContractTests.java" />
+        <option value="$PROJECT_DIR$/java-source/src/main/java/com/example/state/QRContent.java" />
+        <option value="$PROJECT_DIR$/java-source/src/main/java/com/example/contract/BuyerContract.java" />
+        <option value="$PROJECT_DIR$/java-source/src/main/java/com/example/state/BuyerTransState.java" />
+        <option value="$PROJECT_DIR$/java-source/src/test/java/com/example/contract/BuyerContractTests.java" />
+        <option value="$PROJECT_DIR$/java-source/src/test/java/com/example/QRDriver.java" />
+        <option value="$PROJECT_DIR$/java-source/src/test/java/com/example/NodeDriver.java" />
+        <option value="$PROJECT_DIR$/java-source/src/main/java/com/example/api/ExampleApi.java" />
+        <option value="$PROJECT_DIR$/java-source/src/main/java/com/example/flow/QRScanFlow.java" />
+        <option value="$PROJECT_DIR$/java-source/src/main/resources/exampleWeb/index2.html" />
+        <option value="$PROJECT_DIR$/build.gradle" />
+        <option value="$PROJECT_DIR$/java-source/build.gradle" />
+        <option value="$PROJECT_DIR$/java-source/src/main/java/com/example/flow/TrustXFlow.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="y" value="27" />
+    <option name="width" value="960" />
+    <option name="height" value="1053" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="nodes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="nodes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="nodes" type="462c0819:PsiDirectoryNode" />
+              <item name="Seller" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="nodes" type="462c0819:PsiDirectoryNode" />
+              <item name="Seller" type="462c0819:PsiDirectoryNode" />
+              <item name="logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="flow" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="state" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="exampleWeb" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="exampleWeb" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="cordapp-example" type="b2602c69:ProjectViewProjectNode" />
+              <item name="cordapp-example" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java-source" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+              <item name="contract" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550401645397" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TrustX" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.flow" />
+      <recent name="com.example.contract" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/java-source/src/main/resources/exampleWeb" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Run Example Cordapp - QRDriver">
+    <configuration name="Run Example Cordapp - QRDriver" type="Application" factoryName="Application">
+      <option name="ALTERNATIVE_JRE_PATH" value="1.8" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="com.example.QRDriver" />
+      <module name="com.example.java-source.test" />
+      <option name="VM_PARAMETERS" value="-ea -javaagent:lib/quasar.jar" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Run Example Cordapp - Java" />
+      <item itemvalue="Application.Run Example Cordapp - QRDriver" />
+      <item itemvalue="Application.Run Example RPC Client - Java" />
+      <item itemvalue="Gradle.Unit tests" />
+      <item itemvalue="JUnit.Run Contract Tests - Java" />
+      <item itemvalue="JUnit.Run Contract Tests - Kotlin" />
+      <item itemvalue="JUnit.Run Flow Tests - Java" />
+      <item itemvalue="JUnit.Run Flow Tests - Kotlin" />
+      <item itemvalue="JUnit.Run Integration Tests - Java" />
+      <item itemvalue="JUnit.Run Integration Tests - Kotlin" />
+      <item itemvalue="Kotlin.Run Example Cordapp - Kotlin" />
+      <item itemvalue="Kotlin.Run Example RPC Client - Kotlin" />
+      <item itemvalue="Remote.Debug CorDapp" />
+    </list>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="25832ae6-0b7f-43e6-9d5d-e04e66556121" name="Default Changelist" comment="" />
+      <created>1550345229383</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550345229383</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Run_Contract_Tests_-_Java - 2019.02.17 at 01h 58m 32s.xml">
+      <configuration name="Run Contract Tests - Java" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_Contract_Tests_-_Java - 2019.02.17 at 02h 00m 43s.xml">
+      <configuration name="Run Contract Tests - Java" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_Contract_Tests_-_Java - 2019.02.17 at 02h 02m 54s.xml">
+      <configuration name="Run Contract Tests - Java" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_Contract_Tests_-_Java - 2019.02.17 at 02h 07m 21s.xml">
+      <configuration name="Run Contract Tests - Java" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_Contract_Tests_-_Java - 2019.02.17 at 02h 07m 43s.xml">
+      <configuration name="Run Contract Tests - Java" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_Contract_Tests_-_Java - 2019.02.17 at 02h 08m 45s.xml">
+      <configuration name="Run Contract Tests - Java" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_Contract_Tests_-_Java - 2019.02.17 at 02h 15m 54s.xml">
+      <configuration name="Run Contract Tests - Java" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_Flow_Tests_-_Java - 2019.02.17 at 02h 18m 31s.xml">
+      <configuration name="Run Flow Tests - Java" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_Integration_Tests_-_Java - 2019.02.17 at 02h 56m 19s.xml">
+      <configuration name="Run Integration Tests - Java" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Run_Integration_Tests_-_Java - 2019.02.17 at 02h 57m 42s.xml">
+      <configuration name="Run Integration Tests - Java" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17769477" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Designer" order="3" />
+      <window_info id="Capture Tool" order="4" />
+      <window_info id="UI Designer" order="5" />
+      <window_info id="Favorites" order="6" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3293348" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3293348" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.3293348" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.3293348" />
+      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3293348" />
+      <window_info anchor="bottom" id="Build" order="10" weight="0.3293348" />
+      <window_info active="true" anchor="bottom" id="Messages" order="11" visible="true" weight="0.3293348" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Maven" order="4" />
+      <window_info anchor="right" id="Gradle" order="5" />
+      <window_info anchor="right" id="Theme Preview" order="6" />
+      <window_info anchor="right" id="Capture Analysis" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+    </layout>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/state/QRGenState.java" />
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.corda/corda-test-utils/3.3-corda/10ee1eb4431f3ffa0f64a87ab1fabd1268ff4438/corda-test-utils-3.3-corda-sources.jar!/net/corda/testing/core/TestUtils.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="125" column="32" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/contract/POSContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="52" column="76" selection-start-line="52" selection-start-column="27" selection-end-line="52" selection-end-column="76" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.corda/corda-core/3.3-corda/e2a51041991ca78ebe5270bf9da1e748b8d0e5a0/corda-core-3.3-corda-sources.jar!/net/corda/core/crypto/SecureHash.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-937">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/test/java/com/example/flow/TrustXFlowTests.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/test/java/com/example/flow/QRScanFlowTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/contract/BuyerContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="43" column="56" selection-start-line="43" selection-start-column="56" selection-end-line="43" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/test/java/com/example/contract/IOUContractTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-615">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/schema/QrCard.java" />
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/state/IOUState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-231">
+          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/client/ExampleClientRPC.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/kotlin/com/example/api/ExampleApi.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-651" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/contract/IOUContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/test/java/com/example/flow/IOUFlowTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="56" column="82" selection-start-line="56" selection-start-column="82" selection-end-line="56" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/main/resources/exampleWeb/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/src/test/kotlin/com/example/NodeDriver.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/api/ExampleApi.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="65" column="14" selection-start-line="65" selection-start-column="14" selection-end-line="65" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/test/java/com/example/QRDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QR_random.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/state/QRCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="47" column="1" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/integrationTest/java/com/example/DriverBasedTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/resources/exampleWeb/js/angular-module.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="32" column="37" selection-start-line="32" selection-start-column="37" selection-end-line="32" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/resources/exampleWeb/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/resources/exampleWeb/js/script.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/resources/exampleWeb/index2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/test/java/com/example/NodeDriver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="28" column="58" selection-start-line="28" selection-start-column="58" selection-end-line="28" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.corda/corda-core/3.3-corda/e2a51041991ca78ebe5270bf9da1e748b8d0e5a0/corda-core-3.3-corda-sources.jar!/net/corda/core/utilities/UntrustworthyData.kt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="20" column="12" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/state/POSTransState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-232">
+          <caret line="43" column="31" selection-start-line="43" selection-start-column="31" selection-end-line="43" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/flow/ExampleFlow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="653">
+          <caret line="148" column="13" selection-start-line="148" selection-start-column="13" selection-end-line="148" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2044#2045#0" expanded="true" />
+            <element signature="e#2124#2125#0" expanded="true" />
+            <element signature="e#2337#2338#0" expanded="true" />
+            <element signature="e#2408#2409#0" expanded="true" />
+            <element signature="e#3165#3166#0" expanded="true" />
+            <element signature="e#3211#3212#0" expanded="true" />
+            <element signature="e#5618#5619#0" expanded="true" />
+            <element signature="e#5678#5679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/state/BuyerTransState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="983">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="e#2575#2576#0" expanded="true" />
+            <element signature="e#2608#2609#0" expanded="true" />
+            <element signature="e#2642#2643#0" expanded="true" />
+            <element signature="e#2673#2674#0" expanded="true" />
+            <element signature="e#2717#2718#0" expanded="true" />
+            <element signature="e#2747#2748#0" expanded="true" />
+            <element signature="e#2793#2794#0" expanded="true" />
+            <element signature="e#2825#2826#0" expanded="true" />
+            <element signature="e#2858#2859#0" expanded="true" />
+            <element signature="e#2887#2888#0" expanded="true" />
+            <element signature="e#2918#2919#0" expanded="true" />
+            <element signature="e#2946#2947#0" expanded="true" />
+            <element signature="e#2975#2976#0" expanded="true" />
+            <element signature="e#3001#3002#0" expanded="true" />
+            <element signature="e#3199#3200#0" expanded="true" />
+            <element signature="e#3247#3248#0" expanded="true" />
+            <element signature="e#3410#3411#0" expanded="true" />
+            <element signature="e#3468#3469#0" expanded="true" />
+            <element signature="e#3514#3515#0" expanded="true" />
+            <element signature="e#3574#3575#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/test/java/com/example/contract/BuyerContractTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="24" column="50" selection-start-line="24" selection-start-column="50" selection-end-line="24" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/QR_42.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/kotlin-source/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-990" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/flow/QRScanFlow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="157" column="74" selection-start-line="157" selection-start-column="74" selection-end-line="157" selection-end-column="74" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/state/QRContent.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="585">
+          <caret line="51" column="21" selection-start-line="51" selection-start-column="21" selection-end-line="51" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradle.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/settings.gradle">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/build/nodes/Seller/logs/node-nixT480s.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1695">
+          <caret line="113" selection-start-line="113" selection-end-line="113" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="74" column="29" lean-forward="true" selection-start-line="74" selection-start-column="29" selection-end-line="74" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/test/java/com/example/contract/POSContractTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/java-source/src/main/java/com/example/flow/TrustXFlow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="147">
+          <caret line="138" column="120" selection-start-line="138" selection-start-column="120" selection-end-line="138" selection-end-column="120" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Kotlin</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>example</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Gradle: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
